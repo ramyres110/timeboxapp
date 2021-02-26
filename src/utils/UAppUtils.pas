@@ -2,6 +2,13 @@ unit UAppUtils;
 
 interface
 
+type
+
+TAppUtils = class(TObject)
+
+end;
+
+
 function GetApplicationName: string;
 function GetVersaoArq: string;
 
