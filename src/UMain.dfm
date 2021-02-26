@@ -112,9 +112,9 @@ object FrmMain: TFrmMain
     Left = 24
     Top = 16
     object File1: TMenuItem
-      Caption = 'File'
+      Caption = '&File'
       object New1: TMenuItem
-        Caption = 'New'
+        Caption = '&New'
         OnClick = New1Click
       end
       object N1: TMenuItem
@@ -128,8 +128,15 @@ object FrmMain: TFrmMain
         Caption = '-'
       end
       object Exit1: TMenuItem
-        Caption = 'Exit'
+        Caption = 'E&xit'
         OnClick = Exit1Click
+      end
+    end
+    object About1: TMenuItem
+      Caption = '&Help'
+      object Aboult1: TMenuItem
+        Caption = 'About'
+        OnClick = Aboult1Click
       end
     end
   end

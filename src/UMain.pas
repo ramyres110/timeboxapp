@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.Menus, Vcl.Buttons,
-  System.Classes, UFrmAbstract;
+  System.Classes, UFrmAbstract, UFrmAbout;
 
 type
   TFrmMain = class(TFrmAbstract)
@@ -22,6 +22,8 @@ type
     Panel2: TPanel;
     SpeedButton1: TSpeedButton;
     TimerMain: TTimer;
+    About1: TMenuItem;
+    Aboult1: TMenuItem;
     procedure Exit1Click(Sender: TObject);
     procedure btnPlayPauseClick(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
@@ -30,6 +32,7 @@ type
     procedure Settings1Click(Sender: TObject);
     procedure FormShow(Sender: TObject);
     procedure TimerMainTimer(Sender: TObject);
+    procedure Aboult1Click(Sender: TObject);
   private
     { Private declarations }
     FStrTimeout: string;
@@ -44,6 +47,7 @@ type
     procedure countTime();
     procedure updateTimer();
 
+    procedure openAbout();
     procedure openSettings();
 
     function ValidateStrTime(pStr: string):boolean;
@@ -74,6 +78,12 @@ implementation
 {$R *.dfm}
 
 uses UStrUtils, UNumberUtils;
+
+procedure TFrmMain.Aboult1Click(Sender: TObject);
+begin
+  inherited;
+  openAbout;
+end;
 
 procedure TFrmMain.btnPlayPauseClick(Sender: TObject);
 begin
@@ -169,6 +179,16 @@ procedure TFrmMain.New1Click(Sender: TObject);
 begin
   pause;
   restart;
+end;
+
+procedure TFrmMain.openAbout;
+begin
+  FrmAbout := TFrmAbout.Create(Self);
+  try
+    FrmAbout.ShowModal;
+  finally
+    FrmAbout.Free;
+  end;
 end;
 
 procedure TFrmMain.openSettings;

@@ -5,9 +5,10 @@ uses
   UMain in 'src\UMain.pas' {FrmMain},
   UStrUtils in 'src\utils\UStrUtils.pas',
   UNumberUtils in 'src\utils\UNumberUtils.pas',
-  USettings in 'src\forms\USettings.pas' {FrmSettings},
+  UFrmSettings in 'src\forms\UFrmSettings.pas' {FrmSettings},
   UFrmAbstract in 'src\forms\UFrmAbstract.pas' {FrmAbstract},
-  UAppUtils in 'src\utils\UAppUtils.pas';
+  UAppUtils in 'src\utils\UAppUtils.pas',
+  UFrmAbout in 'src\forms\UFrmAbout.pas' {FrmAbout};
 
 {$R *.res}
 
@@ -20,7 +21,5 @@ begin
   Application.MainFormOnTaskbar := True;
   Application.Title := 'TimeBox';
   Application.CreateForm(TFrmMain, FrmMain);
-  Application.CreateForm(TFrmSettings, FrmSettings);
-  Application.CreateForm(TFrmAbstract, FrmAbstract);
   Application.Run;
 end.
