@@ -8,7 +8,8 @@ uses
   UFrmSettings in 'src\forms\UFrmSettings.pas' {FrmSettings},
   UFrmAbstract in 'src\forms\UFrmAbstract.pas' {FrmAbstract},
   UAppUtils in 'src\utils\UAppUtils.pas',
-  UFrmAbout in 'src\forms\UFrmAbout.pas' {FrmAbout};
+  UFrmAbout in 'src\forms\UFrmAbout.pas' {FrmAbout},
+  USettings in 'src\entities\USettings.pas';
 
 {$R *.res}
 

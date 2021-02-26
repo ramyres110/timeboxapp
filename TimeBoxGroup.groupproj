@@ -1,0 +1,36 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{AA08E05F-5869-4D92-93A5-8F08B4FF9885}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="TimeBox.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="TimeBox">
+        <MSBuild Projects="TimeBox.dproj"/>
+    </Target>
+    <Target Name="TimeBox:Clean">
+        <MSBuild Projects="TimeBox.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TimeBox:Make">
+        <MSBuild Projects="TimeBox.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="TimeBox"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="TimeBox:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="TimeBox:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

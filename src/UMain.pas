@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.Menus, Vcl.Buttons,
-  System.Classes, UFrmAbstract, UFrmAbout;
+  System.Classes, UFrmAbstract, UFrmAbout, UFrmSettings;
 
 type
   TFrmMain = class(TFrmAbstract)
@@ -156,6 +156,8 @@ procedure TFrmMain.loadStrTimeout;
 var
   strNums: TStrings;
 begin
+  FStrTimeout := Settings.DefaultTimeout;
+
   if(FStrTimeout = EmptyStr)then
   begin
     FHour := 0;
@@ -193,7 +195,15 @@ end;
 
 procedure TFrmMain.openSettings;
 begin
-  setStrTimeout(InputBox('TimeBox','Informe the timeout (Format 00:00:00):',''));
+//  setStrTimeout(InputBox('TimeBox','Informe the timeout (Format 00:00:00):',''));
+  FrmSettings := TFrmSettings.Create(Self);
+  try
+    FrmSettings.ShowModal;
+    Settings.loadSettings();
+    restart;
+  finally
+    FrmSettings.Free;
+  end;
 end;
 
 procedure TFrmMain.pause;

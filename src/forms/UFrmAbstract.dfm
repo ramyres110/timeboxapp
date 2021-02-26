@@ -16,6 +16,7 @@ object FrmAbstract: TFrmAbstract
   OldCreateOrder = False
   Position = poMainFormCenter
   OnCreate = FormCreate
+  OnDestroy = FormDestroy
   PixelsPerInch = 96
   TextHeight = 16
 end
