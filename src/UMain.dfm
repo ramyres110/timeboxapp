@@ -35,7 +35,6 @@ object FrmMain: TFrmMain
     ParentBackground = False
     ParentFont = False
     TabOrder = 0
-    ExplicitTop = -8
     DesignSize = (
       384
       541)

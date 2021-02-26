@@ -5,10 +5,10 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.Menus, Vcl.Buttons,
-  System.Classes;
+  System.Classes, UFrmAbstract;
 
 type
-  TFrmMain = class(TForm)
+  TFrmMain = class(TFrmAbstract)
     PnlMain: TPanel;
     MainMenu1: TMainMenu;
     File1: TMenuItem;
