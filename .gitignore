@@ -6,3 +6,6 @@ dcu/
 *.local*
 __history/
 *identcach*
+test/bin/
+test/dcu/
+test/__history/

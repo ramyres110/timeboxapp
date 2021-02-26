@@ -6,6 +6,9 @@
         <Projects Include="TimeBox.dproj">
             <Dependencies/>
         </Projects>
+        <Projects Include="test\TimeBoxTests.dproj">
+            <Dependencies/>
+        </Projects>
     </ItemGroup>
     <ProjectExtensions>
         <Borland.Personality>Default.Personality.12</Borland.Personality>
@@ -23,14 +26,23 @@
     <Target Name="TimeBox:Make">
         <MSBuild Projects="TimeBox.dproj" Targets="Make"/>
     </Target>
+    <Target Name="TimeBoxTests">
+        <MSBuild Projects="test\TimeBoxTests.dproj"/>
+    </Target>
+    <Target Name="TimeBoxTests:Clean">
+        <MSBuild Projects="test\TimeBoxTests.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TimeBoxTests:Make">
+        <MSBuild Projects="test\TimeBoxTests.dproj" Targets="Make"/>
+    </Target>
     <Target Name="Build">
-        <CallTarget Targets="TimeBox"/>
+        <CallTarget Targets="TimeBox;TimeBoxTests"/>
     </Target>
     <Target Name="Clean">
-        <CallTarget Targets="TimeBox:Clean"/>
+        <CallTarget Targets="TimeBox:Clean;TimeBoxTests:Clean"/>
     </Target>
     <Target Name="Make">
-        <CallTarget Targets="TimeBox:Make"/>
+        <CallTarget Targets="TimeBox:Make;TimeBoxTests:Make"/>
     </Target>
     <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
 </Project>
