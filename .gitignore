@@ -1,0 +1,8 @@
+# 
+bin/
+dcu/
+# *.dproj
+*.res
+*.local*
+__history/
+*identcach*
