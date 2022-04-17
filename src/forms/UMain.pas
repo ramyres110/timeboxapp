@@ -195,7 +195,6 @@ end;
 
 procedure TFrmMain.openSettings;
 begin
-//  setStrTimeout(InputBox('TimeBox','Informe the timeout (Format 00:00:00):',''));
   FrmSettings := TFrmSettings.Create(Self);
   try
     FrmSettings.ShowModal;
