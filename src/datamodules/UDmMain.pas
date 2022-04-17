@@ -9,13 +9,16 @@ uses
   FireDAC.Stan.ExprFuncs, FireDAC.Phys.SQLiteWrapper.Stat,
   FireDAC.Phys.SQLiteDef, FireDAC.Phys.SQLite, Data.DB, FireDAC.Comp.Client,
   FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt,
-  FireDAC.Comp.DataSet;
+  FireDAC.Comp.DataSet, Datasnap.Provider, Datasnap.DBClient;
 
 type
   TDmMain = class(TDataModule)
     FDConn: TFDConnection;
     FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink;
     FdQry: TFDQuery;
+    DSActors: TDataSource;
+    CDSActors: TClientDataSet;
+    DSPActors: TDataSetProvider;
     procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }
@@ -41,8 +44,6 @@ begin
 
   FDConn.Params.DriverID := 'SQLite';
   FDConn.Params.Database := 'database.sdb';
-
-  FDConn.Open;
 end;
 
 end.

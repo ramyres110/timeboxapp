@@ -106,6 +106,27 @@ object FrmMain: TFrmMain
         OnClick = SpeedButton1Click
         ExplicitLeft = 338
       end
+      object SpeedButton2: TSpeedButton
+        AlignWithMargins = True
+        Left = 283
+        Top = 0
+        Width = 46
+        Height = 46
+        Cursor = crHandPoint
+        Margins.Top = 0
+        Margins.Bottom = 0
+        Align = alRight
+        Caption = '&Actors'
+        Flat = True
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+        OnClick = SpeedButton2Click
+        ExplicitLeft = 338
+      end
     end
   end
   object MainMenu1: TMainMenu

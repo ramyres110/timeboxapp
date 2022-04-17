@@ -105,6 +105,7 @@
         <DCCReference Include="utils\UStrUtils.pas"/>
         <DCCReference Include="utils\UNumberUtils.pas"/>
         <DCCReference Include="utils\UAppUtils.pas"/>
+        <DCCReference Include="utils\UDatabaseMigration.pas"/>
         <DCCReference Include="forms\UMain.pas">
             <Form>FrmMain</Form>
         </DCCReference>
@@ -121,6 +122,10 @@
             <Form>DmMain</Form>
             <FormType>dfm</FormType>
             <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="forms\registers\UFrmRegActors.pas">
+            <Form>FrmRegActors</Form>
+            <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Debug">
             <Key>Cfg_2</Key>
